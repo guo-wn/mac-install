@@ -1,9 +1,11 @@
 brew install --force-bottle blast
 
+mkdir -p ~/data/blast
+cd ~/data/blast
+mkdir blast_result
 makeblastdb -dbtype nucl -in ~/data/blast/hsa.miRNA.fa  -parse_seqids 
-
 # blast 
 blastn -task blastn -evalue 1 -num_threads 4 -num_descriptions 10 -num_alignments 10 -outfmt 0 \
     -dust yes -soft_masking true \
-    -db hsa.miRNA.fa -query ~/data/blast/FAM225A.fa  -out FAM225A.blast
+    -db hsa.miRNA.fa -query ~/data/blast/FAM225A.fa  -out ~/data/blast/blast_result/FAM225A.blast
     
