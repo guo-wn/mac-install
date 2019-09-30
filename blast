@@ -1,3 +1,5 @@
+brew install --force-bottle blast
+
 makeblastdb -dbtype nucl -in ~/data/blast/hsa.miRNA.fa  -parse_seqids 
 
 # blast 
